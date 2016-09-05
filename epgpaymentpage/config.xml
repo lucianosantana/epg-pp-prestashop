@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+    <name>epgpaymentpage</name>
+    <displayName><![CDATA[EPG PaymentPage]]></displayName>
+    <version><![CDATA[1.2.0]]></version>
+    <description><![CDATA[Pay with Euro Payment Group Payment Page.]]></description>
+    <author><![CDATA[Euro Payment Group GmbH]]></author>
+    <tab><![CDATA[payments_gateways]]></tab>
+    <confirmUninstall><![CDATA[Are you sure about removing these details?]]></confirmUninstall>
+    <is_configurable>1</is_configurable>
+    <need_instance>1</need_instance>
+    <limited_countries></limited_countries>
+</module>
+
