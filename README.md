@@ -1,3 +1,5 @@
-# epg-pp-prestashop
+# Euro Payment Group PrestaShop Plugin
 
-Created by Euro Payment Group
+## About
+
+Accept payments for your products via EPG Secure Payment Page
