@@ -56,6 +56,15 @@ class EpgpaymentpagePaymentModuleFrontController extends ModuleFrontController
         $this->parseService = new ParseService($rawResponse);
         $result = $this->parseService->parse();
 
+        if (empty($result)) {
+            $this->context->cookie->__unset($this->epg_token_name);
+            $this->context->cookie->__set(
+                $this->epg_error_name,
+                'System Error, please try again later.'
+            );
+            Tools::redirect('index.php?controller=order&step=3');
+        }
+
         if (!empty($result->TransactionId) && $result->ResultStatus == 'OK') {
             $validation = new EpgpaymentpageValidationModuleFrontController();
             $validation->setResponse($result);
