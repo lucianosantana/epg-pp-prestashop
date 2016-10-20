@@ -24,19 +24,10 @@
 *}
 
 {if $status == 'ok'}
-<p>{l s='Your order on %s is complete.' sprintf=$shop_name mod='epgpaymentpage'}
-		<br /><br />
-		{l s='Please send us a EPG with' mod='epgpaymentpage'}
-		<br /><br />- {l s='Amount' mod='epgpaymentpage'} <span class="price"><strong>{$total_to_pay}</strong></span>
-		<br /><br />- {l s='Id of Merchant' mod='epgpaymentpage'}  <strong>{if $epgpaymentpageMerchantId}{$epgpaymentpageMerchantId}{else}___________{/if}</strong>
-		<br /><br />- {l s='Merchant Guid ' mod='epgpaymentpage'}  <strong>{if $epgpaymentpageMerchantGuid}{$epgpaymentpageMerchantGuid}{else}___________{/if}</strong>
-		{if !isset($reference)}
-			<br /><br />- {l s='Do not forget to insert your order number #%d in the subject of your EPG.' sprintf=$id_order mod='epgpaymentpage'}
-		{else}
-			<br /><br />- {l s='Do not forget to insert your order reference %s in the subject of your Epg.' sprintf=$reference mod='epgpaymentpage'}
-		{/if}		<br /><br />{l s='An email has been sent with this information.' mod='epgpaymentpage'}
-		<br /><br /> <strong>{l s='Your order will be sent as soon as we receive payment.' mod='epgpaymentpage'}</strong>
-		<br /><br />{l s='If you have questions, comments or concerns, please contact our' mod='epgpaymentpage'} <a href="{$link->getPageLink('contact', true)|escape:'html'}">{l s='expert customer support team' mod='epgpaymentpage'}</a>.
+<p>
+        {l s='Your order on' mod='epgpaymentpage'} <span class="bold">{$shop_name|escape:'htmlall':'UTF-8'}</span> {l s='is complete.' mod='epgpaymentpage'}
+        <br /><br />
+        {l s='The total amount of this order is' mod='epgpaymentpage'} <span class="price">{$total_to_pay|escape:'htmlall':'UTF-8'}</span>
 	</p>
 {else}
 	<p class="warning">
