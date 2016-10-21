@@ -25,7 +25,7 @@ class paymentservice
             'name'  =>  'initiate',
             'url_link'  =>  '/tokenizer/get',
             'required_fields'  =>  array(
-                'MerchantId', 'MerchantGuid', 'TransactionReference', 'TransactionUrl', 'ReturnUrl', 'PaymentType',
+                'MerchantId', 'MerchantGuid', 'TransactionReference', 'TransactionUrl', 'ReturnUrl',
                 'TransactionType', 'Phone', 'FirstName', 'LastName', 'Address', 'Zip', 'City', 'Email', 'Country',
                 'State', 'Amount', 'Currency', 'Format', 'IpAddress',
             ),
@@ -80,7 +80,6 @@ class paymentservice
         $this->data['Email'] = trim($cooki->email);
         $this->data['Phone'] = ($address->phone) ? $address->phone : '';
         $this->data['TransactionType'] = $ttype;
-        $this->data['PaymentType'] = $ptype;
         $this->data['Token'] = $token;
 
         $this->actions[1]['returnTo'] = $link->getModuleLink('epgpaymentpage', 'payment', ['ptype' => $ptype, 'ttype' => $ttype]);
