@@ -170,12 +170,15 @@ class Epgpaymentpage extends PaymentModule
             return false;
         }
 
+        static $error;
+        $error = $this->context->cookie->__get($this->epg_error_name) ?  $this->context->cookie->__get($this->epg_error_name) : $error ;
+
         $this->smarty->assign([
             'this_path' => $this->_path,
             'this_path_epg' => $this->_path,
             'this_path_ssl' => Tools::getShopDomainSsl(true, true) . __PS_BASE_URI__ . 'modules/' . $this->name . '/',
             'static_token' => Tools::getToken(false),
-            'this_error' => $this->context->cookie->__get($this->epg_error_name),
+            'this_error' => $error,
             'poTypes' => $this->poTypes
         ]);
 
