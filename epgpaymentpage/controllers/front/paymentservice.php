@@ -35,7 +35,7 @@ class paymentservice
             'name'  =>  'get_result',
             'url_link'  =>  '/tokenizer/getresult',
             'required_fields'  =>  array(
-                'MerchantId', 'MerchantGuid', 'PaymentType', 'TransactionType', 'Token', 'Format', 'IpAddress',
+                'MerchantId', 'MerchantGuid', 'TransactionType', 'Token', 'Format', 'IpAddress',
             ),
             'returnTo' =>  '',
         ),
