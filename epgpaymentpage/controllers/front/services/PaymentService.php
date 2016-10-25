@@ -14,7 +14,7 @@ class PaymentService
             'name' => 'initiate',
             'url_link' => '/tokenizer/get',
             'required_fields' => array(
-                'MerchantId', 'MerchantGuid', 'TransactionReference', 'TransactionUrl', 'ReturnUrl', 'PaymentType',
+                'MerchantId', 'MerchantGuid', 'TransactionReference', 'TransactionUrl', 'ReturnUrl',
                 'TransactionType', 'Phone', 'FirstName', 'LastName', 'Address', 'Zip', 'City', 'Email', 'Country',
                 'State', 'Amount', 'Currency', 'Format', 'IpAddress',
             ),
