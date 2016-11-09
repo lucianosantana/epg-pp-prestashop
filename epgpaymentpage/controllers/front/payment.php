@@ -65,7 +65,7 @@ class EpgpaymentpagePaymentModuleFrontController extends ModuleFrontController
             Tools::redirect('index.php?controller=order&step=3');
         }
 
-        if (!empty($result->TransactionId) && $result->ResultStatus == 'OK') {
+        if (!empty($result->TransactionId) && ($result->ResultStatus == 'OK' || $result->ResultStatus == 'DECLINE' ) ) {
             $validation = new EpgpaymentpageValidationModuleFrontController();
             $validation->setResponse($result);
             $validation->postProcess();
